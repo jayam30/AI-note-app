@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { useGroqFallback } from '@/hooks/something';
+
 
 // POST handler
 export async function POST(request: Request) {
@@ -13,8 +15,8 @@ export async function POST(request: Request) {
     const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions';
 
     if (!DEEPSEEK_API_KEY) {
-      // Fallback if DeepSeek API key is missing
-      return await fetchGroqFallbackSummary(text);
+      
+      const summary = await fetchGroqFallbackSummary(text);
     }
 
     const response = await fetch(DEEPSEEK_API_URL, {
