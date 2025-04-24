@@ -53,7 +53,7 @@ export default function RootLayout({
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <html lang="en"> {/* Root HTML tag */}
+    <html lang="en"> 
       <body>
         <QueryClientProvider client={queryClient}>
           <div className="flex">

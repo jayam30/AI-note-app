@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { queryClient as importedQueryClient } from '@/lib/queries';
 
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
